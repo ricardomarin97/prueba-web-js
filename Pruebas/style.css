@@ -11,13 +11,4 @@
     width: 20px;
     background-color: lightblue;
     border-radius: 10px;
-    transform: translate(-50%, -50%);
-    transform-origin: left top;
-    animation: zoom 10s 1 both;
-}
-
-@keyframes zoom {
-    to {
-        transform: scale(3) translate(-50%, -50%)
-    }
 }
