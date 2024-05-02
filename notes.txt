@@ -1,1 +1,3 @@
 This is a note file for setting a list of objetives to acomplish.
+
+- Commit changes all days since Apr 29th.
