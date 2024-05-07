@@ -1,0 +1,13 @@
+.rect {
+    position: fixed;
+    background-color: rgb(140, 94, 25);
+    overflow: hidden;
+
+}
+
+.prueba{
+    position: fixed;
+    background-color: red;;
+    width : 1px;
+    height : 1px;
+}
