@@ -1,43 +1,36 @@
-// var rectTop = null;
-// var rectTop = null;
-// var rectWidth = null;
-// var rectHeight = null;
+window.addEventListener("mousedown", function createRect(e1) {
 
-window.onmousedown = function(e){
+    let initX = e1.clientX;
+    let initY = e1.clientY;
+    let rectWidth, rectHeight;
 
-    rectTop = `${e.clientY}px`;
-    rectLeft = `${e.clientX}px`;
-
-    console.log(rectTop, rectLeft);
-    
     let rect = document.createElement("div");
-    let prueba = document.createElement("div");
-    prueba.className = "prueba";
-    prueba.style.top = rectTop;
-    prueba.style.left = rectLeft;
-    document.body.prepend(prueba);
+    let initPoint = document.createElement("div");
+    initPoint.className = "prueba";
+    initPoint.style.top = `${initY}px`;
+    initPoint.style.left = `${initX}px`;
     rect.className = "rect";
-    rect.style.top = rectTop;
-    rect.style.left = rectLeft;
-    document.body.prepend(rect);
+    document.body.appendChild(rect);
+    document.body.appendChild(initPoint);
 
-}
+    function moveRect(e2) {
 
-window.onmousemove = function(e){
+        rectWidth = e2.clientX-initX;
+        rectHeight = e2.clientY-initY;
 
-    let rect = document.querySelector(".rect");
-
-    if(rect !== null){
-
-    rectWidth = e.clientX-parseInt(rectLeft);
-    rectHeight = e.clientY-parseInt(rectTop);
-
-    rect.style.top = (rectHeight >= 0)? `${rectTop}px` : `${e.clientY}px`;
-    rect.style.left = (rectWidth >= 0)? `${rectLeft}px` : `${e.clientX}px`;
-    rect.style.width = (rectWidth >= 0)? `${rectWidth}px` : `${-rectWidth}px`;
-    rect.style.height = (rectHeight >= 0)? `${rectHeight}px`: `${-rectHeight}px`;
+        rect.style.top = (rectHeight >= 0)? `${initY}px` : `${e2.clientY}px`;
+        rect.style.left = (rectWidth >= 0)? `${initX}px` : `${e2.clientX}px`;
+        rect.style.width = (rectWidth >= 0)? `${rectWidth}px` : `${-rectWidth}px`;
+        rect.style.height = (rectHeight >= 0)? `${rectHeight}px`: `${-rectHeight}px`;
 
 
     }
 
-};
+    window.addEventListener("mousemove", moveRect);
+
+    window.addEventListener("mouseup", function(){
+        
+        window.removeEventListener("mousemove", moveRect);
+    })
+
+})
