@@ -13,12 +13,12 @@ let b = setInterval(() => {
   div.style.transform = `${trans} 
     
     
-    skewX(-${i}turn)
+    rotate3d(1,1,1,${i}turn)
     
   `;
 
-  if(i >= 1 || i <= 0){
-    animChange*=-1;
-  }
+  // if(i >= 1 || i <= 0){
+  //   animChange*=-1;
+  // }
 
 }, 24);

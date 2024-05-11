@@ -12,8 +12,8 @@
   text-transform: uppercase;
   font-weight: bold;
   border: 2px solid black;
+  
   transform: translate(-50%, -50%);
-
 }
 
 #lineX {
@@ -38,6 +38,8 @@
   height: 100vh;
 }
 
-body{
+body {
   overflow: hidden;
+  perspective: 100px;
+  perspective-origin: left right;
 }
