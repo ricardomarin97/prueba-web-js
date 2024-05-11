@@ -1,0 +1,5 @@
+p {
+  display: ;
+  border: 1px solid grey;
+  color: orange;
+}
