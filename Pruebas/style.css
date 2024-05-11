@@ -6,15 +6,14 @@
     top: 50%;
     left: 50%;
     border-radius: 50%;
-    transform: translate(-50%,-50%) rotate(45deg);
+    transform: translate(-50%,-50%) rotate(90deg);
 }
 
 a {
   display: inline-block;
   position: absolute;
-  top: 100%;
-  left: 100%;
-  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -34,40 +33,23 @@ a {
     width: 100%;
     height: 100%;
     font-size: 5em;
-    transform: rotate(-45deg);
+    transform: rotate(-90deg);
     align-content: center;
     text-align: center;
 }
 
 @keyframes circleMove {
-    0% {
-        left: 0;
-        top: 0;
+
+    0%{ 
+        top: 25%;
+        left: 25%;
+        transform: rotate(0deg) translate(-100%) rotate(-90deg);
     }
-    
-    25% {
-        left: 100%;
-        top: 0;
-        background-color: aqua;
-    }
+    100%{ 
+        top: 25%;
+        left: 25%;
 
-    50% {
-
-        left: 100%;
-        top: 100%;
-        background-color: brown;
-
-    }
-    75% {
-
-        left: 0;
-        top: 100%;
-        background-color: beige;
-
-    }
-    100%{
-        left: 0;
-        top: 0;
+        transform: rotate(360deg) translate(-100%) rotate(-450deg);
     }
     
 }
