@@ -1,0 +1,60 @@
+#first{
+    background-color: burlywood;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%,-50%) rotate(90deg);
+}
+
+a {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+  align-content: center;
+  background-color: blueviolet;
+  animation: circleMove 6s linear infinite;
+  
+}
+
+#clock{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 5em;
+    transform: rotate(-90deg);
+    align-content: center;
+    text-align: center;
+}
+
+@keyframes circleMove {
+
+    0%{ 
+        top: 25%;
+        left: 25%;
+        transform: rotate(0deg) translate(-100%) rotate(-90deg);
+    }
+    100%{ 
+        top: 25%;
+        left: 25%;
+
+        transform: rotate(360deg) translate(-100%) rotate(-450deg);
+    }
+    
+}
+
+body{
+    overflow: hidden;
+    margin: 0;
+}
