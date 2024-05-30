@@ -1,12 +1,34 @@
-let clock = document.querySelector("#clock");
+function checkSize(pathFile){
 
-clock.textContent = 0;
-let count = 0;
-
-let a = setInterval(()=>{
-
-    count++;
-    clock.textContent = (count == 60)? count=0: count;
+  let size = 0;
+  let xhr = new XMLHttpRequest();
+  xhr.open("HEAD", pathFile, true);
 
 
-}, 100)
+  xhr.onreadystatechange = function(){
+
+    if(this.status === 200, this.readyState === 4){
+
+      size = Number(this.getResponseHeader("Content-Length")/1024/1024);
+      console.log(Number(this.getResponseHeader("Content-Length")/1024/1024).toFixed(2));
+
+      if(size <= 2){
+
+        console.log(size, "Ok");
+
+      }
+      else{
+        console.log(size, "Sorry");
+      }
+      
+    }
+
+  }
+
+  xhr.send();
+
+
+}
+
+checkSize("SAVE_20220709_102311.jpg");
+checkSize("SaveInsta.App - 3341105460986645763.mp4")
