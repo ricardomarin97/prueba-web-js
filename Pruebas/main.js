@@ -2,7 +2,7 @@ function checkSize(pathFile){
 
   let size = 0;
   let xhr = new XMLHttpRequest();
-  xhr.open("HEAD", pathFile, true);
+  xhr.open("POST", pathFile, true);
 
 
   xhr.onreadystatechange = function(){
@@ -30,5 +30,4 @@ function checkSize(pathFile){
 
 }
 
-checkSize("SAVE_20220709_102311.jpg");
-checkSize("SaveInsta.App - 3341105460986645763.mp4")
+checkSize("http://www.bcv.org")
